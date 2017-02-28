@@ -17,7 +17,7 @@ use Facebook\HttpClients\FacebookHttpable;
 FacebookSession::setDefaultApplication( '1837584569842574
 ','4ae79f4816e66c3dfbc388a4376ee756' );
 // login helper with redirect_uri
-    $helper = new FacebookRedirectLoginHelper('http://localhost:80/1353/1353/fbconfig.php' );
+    $helper = new FacebookRedirectLoginHelper('http://thedailyeye.tv/fbconfig.php' );
 try {
   $session = $helper->getSessionFromRedirect();
 } catch( FacebookRequestException $ex ) {

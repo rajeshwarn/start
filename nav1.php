@@ -8,7 +8,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a id="brand" class="navbar-brand" href="#"><img src="images/logo.jpg" class="img-responsive" width="30px" height="30px"></img></a>
+                    <a id="brand" class="navbar-brand" href="#">
+                      <img src="images/logo (Custom).jpg"></img>
+                    </a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                 
@@ -19,7 +21,6 @@
                
               <li><a href='movie.php'>HINDI</a></li>
                 <li><a href='movie.php'>ENGLISH</a></li>
-                 
               </ul>
             </li>
           </ul>

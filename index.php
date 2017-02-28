@@ -213,7 +213,7 @@ function clicked(){
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "itv";
 $dbname = "vod";
 
 // Create connection
@@ -318,7 +318,7 @@ window.onclick = function(event) {
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "itv";
 $dbname = "vod";
 
 // Create connection

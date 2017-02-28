@@ -8,7 +8,7 @@
 <?php
 $q = intval($_GET['q']);
 
-$con = mysqli_connect('localhost','root','','registered_users');
+$con = mysqli_connect('localhost','root','itv','registered_users');
 if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
 }

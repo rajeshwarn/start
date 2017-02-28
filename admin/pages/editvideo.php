@@ -58,11 +58,7 @@
       <th>THUMBNAIL</th>
       <th>TITLE</th>
       <th>EDIT</th>
-      <th>DELETE</th>
-
-<?php 
-echo "<td><a href='edit.php?id=".$query2['id']."'>Edit</a></td>";
-echo "<td><a href='delete.php?id=".$query2['id']."'>x</a></td><tr>";
+      
 
     </tr>
   </thead>
@@ -79,10 +75,10 @@ echo "<td><a href='delete.php?id=".$query2['id']."'>x</a></td><tr>";
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-         echo "<tr><td>{$row['id']}</td><td>{$row['v_id']}</td><td>{$row['thumbnail']}</td><td>{$row['title']}</td><td><a href='edit.php?id=".$row['id']."'>Edit</a></td></tr>\n";
+         echo "<tr><td>{$row['id']}</td><td>{$row['v_id']}</td><td>{$row['thumbnail']}</td><td>{$row['title']}</td>";
+
+         echo '<td>'; echo $row['id']; echo '</td></tr>\n';
     }
-} else {
-    echo "0 results";
 }
 $conn->close();
 ?>
