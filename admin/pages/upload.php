@@ -39,17 +39,20 @@
     if (isset($_POST['id']) && isset($_POST['thumb']) && isset($_POST['episode'])){
         $id = $_POST['id'];
         $thumb = $_POST['thumb'];
-      $episode = $_POST['episode'];
+        $episode = $_POST['episode'];
        
  
-        $query = "INSERT INTO `vid_info` (v_id,thumbnail, title) VALUES ('$id', '$thumb', '$episode')";
+        $query = "INSERT INTO vid_info (v_id,thumbnail, title) VALUES ('$id', '$thumb', '$episode')";
         $result = mysqli_query($conn, $query);
         if($result){
-           alert("sucess");
-           header("Refresh:3");
-
+          echo '<script language="javascript">';
+echo 'alert("message successfully sent")';
+echo '</script>';
+           
         }else{
-          alert("unable to connect");
+          echo '<script language="javascript">';
+echo 'alert("unable to connect")';
+echo '</script>';
         }
     }
 ?>
