@@ -37,12 +37,14 @@
   require('connection.php');
     // If the values are posted, insert them into the database.
     if (isset($_POST['id']) && isset($_POST['thumb']) && isset($_POST['episode'])){
+
+        $idname = $_POST['idname'];
         $id = $_POST['id'];
         $thumb = $_POST['thumb'];
         $episode = $_POST['episode'];
        
  
-        $query = "INSERT INTO vid_info (v_id,thumbnail, title) VALUES ('$id', '$thumb', '$episode')";
+        $query = "INSERT INTO vid_info (id ,v_id,thumbnail, title) VALUES ('$idname', '$id', '$thumb', '$episode')";
         $result = mysqli_query($conn, $query);
         if($result){
           echo '<script language="javascript">';
@@ -79,6 +81,11 @@ echo '</script>';
                             <div class="row">
                                 <div class="col-lg-12">
                                     <form role="form" id="myForm" method="post">
+                                    <div class="form-group">
+                                            <label> ID</label>
+                                            <input class="form-control" name="idname" required="">
+                                            <p class="help-block">VIDEO NUMBER</p>
+                                        </div>
                                         <div class="form-group">
                                             <label>VIDEO ID</label>
                                             <input class="form-control" name="id" required="">
