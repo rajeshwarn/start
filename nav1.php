@@ -13,31 +13,34 @@
                     </a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
-                
-              <ul class="nav navbar-nav navbar-left">
+               <ul class="nav navbar-nav">
+                    <li><a href='movie.php'>HOME</a></li>
+                   
+                    <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"> SHOW<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+               
+               <li><a href='movie.php'>HINDI</a></li>
+                <li><a href='movie.php'>ENGLISH</a></li>
+                 
+              </ul>
+            </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"> MOVIES<b class="caret"></b></a>
               <ul class="dropdown-menu">
                
-              <li><a href='movie.php'>HINDI</a></li>
+               <li><a href='movie.php'>HINDI</a></li>
                 <li><a href='movie.php'>ENGLISH</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-left">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"> TV<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-               
-              <li><a href='#'>STAR PLUS</a></li>
-                <li><a href='#'>LIFE OK</a></li>
-                 
                  
               </ul>
             </li>
+            <li><a href='movie.php'>KIDS</a></li>
+            <li><a href='movie.php'>SHORT FILMS</a></li>
+
+
           </ul>
 
-                     <div class="col-sm-3 col-md-6">
+                     <div class="col-sm-3 col-md-4">
         <div class="input-group">
             <input type="text" class="form-control" placeholder="Search" name="q">
             <div class="input-group-btn">

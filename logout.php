@@ -32,5 +32,5 @@ header('location: index.php');
 <?php
 session_start();
 session_destroy();
-header('location: http://thedailyeye.tv/index.php');
+header('location: http://thedailyeye.tv/start/index.php');
 ?>

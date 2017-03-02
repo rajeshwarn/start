@@ -59,9 +59,29 @@ $email = $_SESSION['email'];
 <head>
     <meta charset="utf-8">
     <title>DAILY.TV</title>
-    <link href="https://fonts.googleapis.com/css?family=Anton|Fjalla+One|Francois+One|Libre+Franklin|Rambla|Ubuntu" rel="stylesheet"><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Anton|Fjalla+One|Francois+One|Libre+Franklin|Rambla|Ubuntu" rel="stylesheet">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   
 <style>
+.video-js {
+    display: block;
+    vertical-align: top;
+    box-sizing: border-box;
+    color: #fff;
+    background-color: #000;
+    position: relative;
+    padding: 0;
+    font-size: 10px;
+    margin-top: 100px;
+    line-height: 1;
+    font-weight: normal;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 /* Full-width input fields */
 
 /* Set a style for all buttons */
@@ -159,12 +179,13 @@ span.psw {
        width: 100%;
     }
 }
+
 </style>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans|Sansita" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-  <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
+  
 <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css'>
 
 <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css'>
@@ -173,7 +194,7 @@ span.psw {
 
 
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
   
 
@@ -181,17 +202,21 @@ span.psw {
 <!--for popup-->
 <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
 <!--close for popup-->
-    <link rel="stylesheet" type="text/css" href="css/style1.css">
+   <!--  <link rel="stylesheet" type="text/css" href="css/style1.css">
    <link rel="stylesheet" type="text/css" href="css/style.css">
-   <link rel="stylesheet" type="text/css" href="css/itv.css">
+   <link rel="stylesheet" type="text/css" href="css/itv.css"> -->
 
 <style type="text/css">
   .player {
     position: relative;
     width: 100%;
     overflow: hidden;
+    
+    height: 500px;
     /* background-color: black; */
     background-image: url('images/shade.jpg');
+  }
+ 
 </style>
 <script>
 function clicked(){
@@ -202,14 +227,10 @@ function clicked(){
 
     <!-- Bootstrap Dropdown Hover CSS -->
     <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/bootstrap-dropdownhover.min.css" rel="stylesheet">
 </head>
 
 <body>
-<script src="js/bootstrap.min.js"></script>
 
-    <!-- Bootstrap Dropdown Hover JS -->
-    <script src="js/bootstrap-dropdownhover.min.js"></script>
 <?php
 $servername = "localhost";
 $username = "root";
@@ -231,7 +252,7 @@ include 'nav.php';
 }
 else
 {
-  include'nav1.php';
+include'nav1.php';
 }
 ?>
 <?php
@@ -269,23 +290,26 @@ $api = 'http://api.getlinkdrive.com/getlink?url='.$link;
 $sources = curl($api);
 if(isset($email)){
 
-  echo '<div class= "player">
+  echo '<div class="col-md-12 col-sm-12">
+  <div class= "player">
   <center><video id="videojs_id" class="video-js" controls preload="auto">
     <p class="vjs-no-js">
       To view this video please enable JavaScript, and consider upgrading to a web browser that
       <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
     </p>
   </video></center>
+  </div>
   </div>';}
   else{
-    echo '<div class= "player" onclick="clicked()" style="width:auto;">
+    echo '<div class="col-md-12 col-sm-12">
+    <div class= "player" onclick="clicked()" style="width:auto;">
      <center>
      <video id="my-video" class="video-js" controls preload="auto" width="640" height="264"
   poster="' ;
            echo $data['thumbnail'];
            echo '" data-setup="{}">
   </video>
-    </div>
+    </div></div>
 </center>
 
 ';
@@ -293,7 +317,6 @@ if(isset($email)){
 
 
 }
-
 
   include 'play.php';}
 else include 'slider.php';
@@ -381,7 +404,6 @@ if ($result = $conn->query($query)) {
 
         </div><!--/.container-->
 
-<script src="js/itv.js"></script>
 <script type="text/javascript">
     // Carousel Auto-Cycle
   $(document).ready(function() {
@@ -398,6 +420,10 @@ if ($result = $conn->query($query)) {
   $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
 });
 </script>
+<script src="js/jquery-1.11.0.min.js"></script>
 
+<script src="js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap Dropdown Hover JS -->
 </body>
 </html>

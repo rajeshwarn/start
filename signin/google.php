@@ -53,7 +53,7 @@ if ($gClient->getAccessToken()) {
 
          $output = $userData['email'];
    /*$output .= '<br/>Logout from <a href="logout.php">Google</a>'; */
-   header("Location: http://thedailyeye.tv/index.php");
+   header("Location: http://thedailyeye.tv/start/index.php");
    }else{
         $output = '<h3 style="color:red">Some problem occurred, please try again.</h3>';
     }

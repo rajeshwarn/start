@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php 
-
-?>
 
 <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+<link href="http://vjs.zencdn.net/5.11.9/video-js.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/videojs-resolution-switcher/0.4.2/videojs-resolution-switcher.css" rel="stylesheet">
+
+  <!-- If you'd like to support IE8 -->
+  <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+<script src="http://vjs.zencdn.net/5.11.9/video.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-resolution-switcher/0.4.2/videojs-resolution-switcher.js">
+
 
 <?php  //Start the Session
 session_start();
@@ -53,9 +59,107 @@ $email = $_SESSION['email'];
 <head>
     <meta charset="utf-8">
     <title>DAILY.TV</title>
-    <link href="https://fonts.googleapis.com/css?family=Anton|Fjalla+One|Francois+One|Libre+Franklin|Rambla|Ubuntu" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Anton|Fjalla+One|Francois+One|Libre+Franklin|Rambla|Ubuntu" rel="stylesheet"><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  
+<style>
+/* Full-width input fields */
 
+/* Set a style for all buttons */
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: black;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans|Sansita" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -77,14 +181,50 @@ $email = $_SESSION['email'];
 <!--for popup-->
 <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
 <!--close for popup-->
-<link rel="stylesheet" type="text/css" href="css/itv.css">
     <link rel="stylesheet" type="text/css" href="css/style1.css">
    <link rel="stylesheet" type="text/css" href="css/style.css">
+   <link rel="stylesheet" type="text/css" href="css/itv.css">
 
+<style type="text/css">
+  .player {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* background-color: black; */
+    background-image: url('images/shade.jpg');
+</style>
+<script>
+function clicked(){
+  document.getElementById('id01').style.display='block';
+}
+</script>
+ <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Dropdown Hover CSS -->
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/bootstrap-dropdownhover.min.css" rel="stylesheet">
 </head>
 
 <body>
+<script src="js/bootstrap.min.js"></script>
 
+    <!-- Bootstrap Dropdown Hover JS -->
+    <script src="js/bootstrap-dropdownhover.min.js"></script>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "itv";
+$dbname = "vod";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+?>
 <?php 
 if (isset($_SESSION['email'])){
 include 'nav.php';
@@ -94,8 +234,86 @@ else
   include'nav1.php';
 }
 ?>
-<?php include 'slider.php';?>
+<?php
 
+function curl($url)
+{
+  $ch = @curl_init();
+  curl_setopt($ch, CURLOPT_URL, $url);
+  $head[] = "Connection: keep-alive";
+  $head[] = "Keep-Alive: 300";
+  $head[] = "Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7";
+  $head[] = "Accept-Language: en-us,en;q=0.5";
+  curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36');
+  curl_setopt($ch, CURLOPT_ENCODING, 'gzip');
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $head);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+  curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+  curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
+  curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+  $page = curl_exec($ch);
+  curl_close($ch);
+  return $page;
+}
+
+if (isset($_GET['id'])){
+  $id = $_GET['id'];
+$query = "select * from vid_info  where id = $id";
+$result = $conn->query($query);
+$data = $result->fetch_array(MYSQLI_ASSOC);
+$link = $data['v_id'];
+//include 'get.php';
+$api = 'http://api.getlinkdrive.com/getlink?url='.$link;
+$sources = curl($api);
+if(isset($email)){
+
+  echo '<div class="col-md-12 col-sm-12">
+  <div class= "player">
+  <center><video id="videojs_id" class="video-js" controls preload="auto">
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a web browser that
+      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+  </video></center>
+  </div>
+  </div>';}
+  else{
+    echo '<div class="col-md-12 col-sm-12">
+    <div class= "player" onclick="clicked()" style="width:auto;">
+     <center>
+     <video id="my-video" class="video-js" controls preload="auto" width="640" height="264"
+  poster="' ;
+           echo $data['thumbnail'];
+           echo '" data-setup="{}">
+  </video>
+    </div></div>
+</center>
+
+';
+
+
+
+}
+
+
+  include 'play.php';}
+else include 'slider.php';
+?>
+
+<div id="id01" class="modal">
+   <h1 style="color: white;"> please <a href= "signin/index.php">sign in </a>to view </h1>
+</div>
+<script>
+var modal = document.getElementById('id01');
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+</script>
 <div class="container">
 
 <br>
@@ -103,7 +321,7 @@ else
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "itv";
 $dbname = "vod";
 
 // Create connection
@@ -122,7 +340,7 @@ if ($result = $conn->query($query)) {
 
 
         echo '
- <div class="col-lg-3 col-md-3 col-sm-4">
+ <div class="col-lg-3 col-md-3 col-sm-2">
    <div class="thumbnail poster">
        <figure>
            <a href=""><img src="' ;
@@ -133,13 +351,17 @@ if ($result = $conn->query($query)) {
        <div class="caption">
            <a href="' ;
            echo $row['v_id'];
-           echo '" class="poster-name">Mai Kuch bhi kar sakti hu</a>
+           echo '" class="poster-name">' ;
+           echo $row['title'];
+           echo '</a>
            <div class="language">HINDI</div>
            <ul class="list-inline tags">
 
            </ul>
        </div>
-       <a href=""><button class="btn btn-primary btn-block">WATCH NOW</button></a>
+       <a href="' ;
+           echo "index.php?id=" . $row['id'];
+           echo '"><button class="btn btn-primary btn-block">WATCH NOW</button></a>
    </div>
 </div>
 ';
@@ -151,21 +373,14 @@ if ($result = $conn->query($query)) {
 }
 ?>
 
-<script type="text/javascript">stLight.options({publisher: "7fe2156e-ea1e-4571-b764-0b1f72349306", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-<script>
-var options={ "publisher": "7fe2156e-ea1e-4571-b764-0b1f72349306", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "linkedin", "pinterest", "email", "sharethis"]}};
-var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
-</script>
-
-</div>
-
 </div>
 <br>
       
 
   </div>
-
+  
       <?php include 'footer.php';?>
+
 
         </div><!--/.container-->
 
@@ -179,7 +394,13 @@ var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
   });
 
 </script>
-
+<script type="text/javascript">
+  $('ul.nav li.dropdown').hover(function() {
+  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+}, function() {
+  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+});
+</script>
 
 </body>
 </html>

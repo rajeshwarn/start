@@ -201,7 +201,7 @@ if ($gClient->getAccessToken()) {
 		  
 		  <br><br>
       
-		  <a href="http://thedailyeye.tv/fbconfig.php"><img src="images/facebook-login-blue.png" width="215px" height="70px" alt=""/></img></a>
+		  <a href="http://thedailyeye.tv/start/fbconfig.php"><img src="images/facebook-login-blue.png" width="215px" height="70px" alt=""/></img></a>
      
      
       <?php $authUrl = $gClient->createAuthUrl();

@@ -13,7 +13,8 @@ body {
 
 a {
   text-decoration: none;
-  color: #1ab188;
+      color: #f9f9f9;
+
   -webkit-transition: .5s ease;
   transition: .5s ease;
 }
@@ -178,24 +179,3 @@ textarea {
 }
 /*--popup-->*/
 
-/* The Modal (background) */
-.caption a {
-  font-size: 1.3em;
-
-}
-.navbar-toggle {
-    position: relative;
-    float: right;
-    margin-right: 15px;
-    padding: 9px 10px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    background-color: rgba(239, 227, 227, 0.67);
-    /* background-image: none; */
-    background-image: url(toggle.png);
-    border-radius: 4px;
-}
-
-.season{
-  background-color: #d0d0d2;
-}

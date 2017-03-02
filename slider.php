@@ -33,6 +33,7 @@
       <div class="item active">
         <img src="images/1 slider-itv.JPG" alt="">
         <div class="carousel-caption">
+        <h1>NEW TV SHOWS ARRIVAL</h1>
 <a href="index.php?id=2"><button type="button" class="btn btn-success">WATCH NOW</button></a>
         </div><!-- /.carousel-caption -->
       </div><!-- /Slide1 -->

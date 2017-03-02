@@ -17,7 +17,7 @@ footer {
 /*
  * Custom styles
  */
- .navbar-fixed-top {
+/* .navbar-fixed-top {
     top: 0;
     background-image: url(../images/shade2.jpg);
     border-width: 0 0 1px;
@@ -38,7 +38,7 @@ footer {
 
 .navbar-brand.fixed-theme {
     font-size: 18px;
-        background-color: #09455d;
+        
 }
 
 .navbar-container.fixed-theme {
@@ -52,10 +52,11 @@ footer {
 .navbar-container{
     transition: 0.8s;
     -webkit-transition:  0.8s;
-}
-li a{
-    color: white;
+}*/
+.dropdown-menu li a{
+    color: black;
     font-family: 'Roboto', sans-serif;
+    padding-left: 1em;
 
 }
 .navbar-nav>li>a {

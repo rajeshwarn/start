@@ -45,9 +45,11 @@
         $query = "INSERT INTO `vid_info` (v_id,thumbnail, title) VALUES ('$id', '$thumb', '$episode')";
         $result = mysqli_query($conn, $query);
         if($result){
-            $smsg = "successfully added.";
+           alert("sucess");
+           header("Refresh:3");
+
         }else{
-            $fmsg ="unable";
+          alert("unable to connect");
         }
     }
 ?>
@@ -66,14 +68,14 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
-                   <?php if(isset($smsg)){ ?><div class="alert alert-success" role="alert"> <?php echo $smsg; ?> </div><?php } ?>
+                   
                         <div class="panel-heading">
                            UPLOAD NEW VIDEO
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <form role="form" id="myForm" >
+                                    <form role="form" id="myForm" method="post">
                                         <div class="form-group">
                                             <label>VIDEO ID</label>
                                             <input class="form-control" name="id" required="">
