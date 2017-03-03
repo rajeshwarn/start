@@ -261,24 +261,26 @@ $api = 'http://api.getlinkdrive.com/getlink?url='.$link;
 $sources = curl($api);
 if(isset($email)){
   echo '<div class="col-md-12 col-sm-12">
-  
-  <center><video id="videojs_id" class="player video-js" controls preload="auto">
+  <div class="player">
+  <center><video id="videojs_id" class=" video-js" controls preload="auto">
     <p class="vjs-no-js">
       To view this video please enable JavaScript, and consider upgrading to a web browser that
       <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
     </p>
   </video></center>
-  
+  </div>
   </div>';}
   else{
     echo '<div class="col-md-12 col-sm-12">
+    <div class="player">
     <div onclick="clicked()" style="width:auto;">
      <center>
-     <video id="my-video" class="player video-js" controls preload="auto" width="640" height="504"
+     <video id="my-video" class=" video-js" controls preload="auto" width="640" height="504"
   poster="' ;
            echo $data['thumbnail'];
            echo '" data-setup="{}">
   </video>
+  </div>
     </div></div>
 </center>
 ';
