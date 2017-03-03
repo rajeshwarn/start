@@ -20,8 +20,8 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"> SHOW<b class="caret"></b></a>
               <ul class="dropdown-menu">
                
-               <li><a href='movie.php'>HINDI</a></li>
-                <li><a href='movie.php'>ENGLISH</a></li>
+               <li><a href='movie.php'>Hindi</a></li>
+                <li><a href='movie.php'>English</a></li>
                  
               </ul>
             </li>
@@ -29,8 +29,8 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"> MOVIES<b class="caret"></b></a>
               <ul class="dropdown-menu">
                
-               <li><a href='movie.php'>HINDI</a></li>
-                <li><a href='movie.php'>ENGLISH</a></li>
+               <li><a href='movie.php'>Hindi</a></li>
+                <li><a href='movie.php'>English</a></li>
                  
               </ul>
             </li>

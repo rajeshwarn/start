@@ -40,7 +40,7 @@ if ( isset( $session ) ) {
         $_SESSION['email'] = $fbfullname;
 	    $_SESSION['EMAIL'] =  $femail;
     /* ---- header location after session ----*/
-  header("Location: index.php");
+  header("Location: ../index.php");
 } else {
   $loginUrl = $helper->getLoginUrl();
  header("Location: ".$loginUrl);
