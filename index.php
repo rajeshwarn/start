@@ -192,8 +192,10 @@ span.psw {
     /* background-color: black; */
     background-image: url('images/shade.jpg');
   }
- .id01{
-  background-color: gray;
+ #id01{
+  padding: 2em;
+  text-align: center;
+  background-color: black;
  }
 </style>
 <script>
@@ -291,7 +293,7 @@ if(isset($email)){
 else include 'slider.php';
 ?>
 
-<div id="id01" class="modal">
+<div id="id01" class="modal" align="center">
    <h1 style="color: white;background-color:gray"> please <a href= "signin/index.php">sign in </a>to view </h1>
 </div>
 <script>
