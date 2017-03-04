@@ -97,7 +97,7 @@ if ($gClient->getAccessToken()) {
       $email = $_POST['email'];
         $password = $_POST['password'];
  
-        $query = "INSERT INTO `user_register` (firstname, lastname, email,password) VALUES ('$firstname', '$lastname', '$email','$password')";
+        $query = "INSERT INTO user_register (firstname, lastname, email,password) VALUES ('$firstname', '$lastname', '$email','$password')";
         $result = mysqli_query($conn, $query);
         if($result){
             $smsg = "User Created Successfully.";

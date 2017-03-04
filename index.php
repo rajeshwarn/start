@@ -192,10 +192,12 @@ span.psw {
     /* background-color: black; */
     background-image: url('images/shade.jpg');
   }
- #id01{
+ #id01 h1{
   padding: 2em;
   text-align: center;
-  background-color: black;
+  color: white;
+  background-color: gray;
+  
  }
 </style>
 <script>
@@ -294,7 +296,7 @@ else include 'slider.php';
 ?>
 
 <div id="id01" class="modal" align="center">
-   <h1 style="color: white;background-color:gray"> please <a href= "signin/index.php">sign in </a>to view </h1>
+   <h1> please <a href= "signin/index.php">sign in </a>to view </h1>
 </div>
 <script>
 var modal = document.getElementById('id01');

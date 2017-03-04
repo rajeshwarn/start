@@ -49,7 +49,7 @@
         </div>
             </div>
  <ul class="nav navbar-nav navbar-right">
- <li><a ><span class="glyphicon glyphicon-user"  id="myBtn" ></span> Sign Up</a>
+ <li><a href="signin/index.php"><span class="glyphicon glyphicon-user"  id="myBtn" ></span> Sign Up</a>
 </li>
 
       <li><a href="signin/index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> 
