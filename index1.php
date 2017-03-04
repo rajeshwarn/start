@@ -193,7 +193,12 @@ span.psw {
     /* background-color: black; */
     background-image: url('images/shade.jpg');
   }
-  
+  .carousel-control {
+  padding-top:10%;
+  width:5%;
+}
+
+
 </style>
 <script>
 function clicked(){
@@ -206,7 +211,21 @@ function clicked(){
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/bootstrap-dropdownhover.min.css" rel="stylesheet">
 </head>
+<script type="text/javascript">
+  $(document).ready(function() {
+  $('#myCarousel').carousel({
+  interval: 10000
+  })
+    
+    $('#myCarousel').on('slid.bs.carousel', function() {
+      //alert("slid");
+  });
+    
+    
+});
 
+
+</script>
 <body>
 <script src="js/bootstrap.min.js"></script>
 
@@ -379,7 +398,67 @@ if ($result = $conn->query($query)) {
       
 
   </div>
-  
+  <div class="container">
+    <div class="col-md-12">
+         <h1>Bootstrap 3 Thumbnail Slider</h1>
+
+        <div class="well">
+            <div id="myCarousel" class="carousel slide">
+                
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="row">
+                          <div class="col-sm-3"><a href="#x"><img src="http://placehold.it/500x500" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-3"><a href="#x"><img src="http://placehold.it/500x500" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-3"><a href="#x"><img src="http://placehold.it/500x500" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-3"><a href="#x"><img src="http://placehold.it/500x500" alt="Image" class="img-responsive"></a>
+                            </div>
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/item-->
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
+                            </div>
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/item-->
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
+                            </div>
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/item-->
+                </div>
+                <!--/carousel-inner--> <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+
+                <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+            </div>
+            <!--/myCarousel-->
+        </div>
+        <!--/well-->
+    </div>
+</div>
       <?php include 'footer.php';?>
 
 

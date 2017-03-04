@@ -53,6 +53,7 @@ footer {     background-color: #eaeaea; min-height:350px; font-family: 'Open San
 <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 <!--footer start from here-->
 <footer>
+<div class="container">
     <div class="row">
       <div class="col-md-4 col-sm-6 footerleft ">
         <div class="logofooter"> <img src="images/logo (Custom).jpg"></div>
@@ -102,6 +103,7 @@ contact@acee-thethirdeye.com</p>
         <li><a href="#">Site Map</a></li>
       </ul>
     </div> -->
+  </div>
   </div>
 <script type="text/javascript">
 

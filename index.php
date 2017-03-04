@@ -4,6 +4,7 @@
 <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 <link href="css/video-js.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/videojs-resolution-switcher/0.4.2/videojs-resolution-switcher.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
 
   <!-- If you'd like to support IE8 -->
   <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
@@ -310,7 +311,9 @@ window.onclick = function(event) {
 
 <br>
  <div class="sections">
+  <h1>MAI KUCH BHI KAR SAKTI HU</h1>
 <?php
+
 $servername = "localhost";
 $username = "root";
 $password = "itv";
@@ -328,6 +331,7 @@ if ($result = $conn->query($query)) {
       $t = json_encode($row);
 
         echo '
+
  <div class="col-lg-3 col-md-3 col-sm-2">
    <div class="thumbnail poster">
        <figure>
@@ -365,11 +369,11 @@ if ($result = $conn->query($query)) {
 
   </div>
   
-      <?php include 'footer.php';?>
+      
 
 
         </div><!--/.container-->
-
+<?php include 'footer.php';?>
 <script type="text/javascript">
     // Carousel Auto-Cycle
   $(document).ready(function() {
