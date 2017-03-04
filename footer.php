@@ -7,11 +7,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type="text/css">
         @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
-footer { background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', sans-serif; }
+footer {     background-color: #eaeaea; min-height:350px; font-family: 'Open Sans', sans-serif; padding: 4em;}
 .footerleft { margin-top:50px; padding:0 36px; }
-.logofooter { margin-bottom:10px; font-size:25px; color:#fff; font-weight:700;}
+.logofooter { margin-bottom:10px; font-size:25px;     color: #564c4c; font-weight:700;}
 
-.footerleft p { color:#fff; font-size:12px !important; font-family: 'Open Sans', sans-serif; margin-bottom:15px;}
+.footerleft p { font-size: 14px !important; font-size:12px !important; font-family: 'Open Sans', sans-serif; margin-bottom:15px; font-weight: bold;}
 .footerleft p i { width:20px; color:#999;}
 
 
@@ -55,22 +55,22 @@ footer { background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', s
 <footer>
     <div class="row">
       <div class="col-md-4 col-sm-6 footerleft ">
-        <div class="logofooter"> THEDAILYEYE.TV</div>
+        <div class="logofooter"> <img src="images/logo (Custom).jpg"></div>
        
-        <p><i class="fa fa-map-pin"></i>1501, 15th Floor, Ashirwad Tower,, Next to Kokilaben Dhirubhai Ambani Hospital, Four Bungalows, Andheri West, Mumbai, Maharashtra 400053</p>
+        <p><i class="fa fa-map-pin"></i>1501, 15th Floor, Ashirwad Tower, Next to Kokilaben Dhirubhai Ambani Hospital, Four Bungalows, Andheri West, Mumbai, Maharashtra 400053</p>
         <p><i class="fa fa-phone"></i> Phone (India) : 022 6526 6620</p>
         <p><i class="fa fa-envelope"></i> E-mail : 
 contact@acee-thethirdeye.com</p>
         
       </div>
-      <div class="col-md-2 col-sm-6 paddingtop-bottom">
+      <!-- <div class="col-md-2 col-sm-6 paddingtop-bottom">
         <h6 class="heading7">GENERAL LINKS</h6>
         <ul class="footer-ul">
           <li><a href="#"> MOVIES </a></li>
           <li><a href="#"> TV</a></li>
           
         </ul>
-      </div>
+      </div> -->
      <!--  <div class="col-md-3 col-sm-6 paddingtop-bottom">
         <h6 class="heading7">LATEST POST</h6>
         <div class="post">
@@ -80,11 +80,7 @@ contact@acee-thethirdeye.com</p>
         </div>
       </div> -->
       <div class="col-md-3 col-sm-6 paddingtop-bottom">
-        <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-          <!-- <div class="fb-xfbml-parse-ignore">
-            <blockquote cite="https://www.facebook.com/facebook"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote>
-          </div> -->
-        </div>
+        
       </div>
     </div>
   </div>
