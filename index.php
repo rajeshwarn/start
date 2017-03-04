@@ -192,7 +192,9 @@ span.psw {
     /* background-color: black; */
     background-image: url('images/shade.jpg');
   }
- 
+ .id01{
+  background-color: gray;
+ }
 </style>
 <script>
 function clicked(){
@@ -290,7 +292,7 @@ else include 'slider.php';
 ?>
 
 <div id="id01" class="modal">
-   <h1 style="color: white;"> please <a href= "signin/index.php">sign in </a>to view </h1>
+   <h1 style="color: white;background-color:gray"> please <a href= "signin/index.php">sign in </a>to view </h1>
 </div>
 <script>
 var modal = document.getElementById('id01');
@@ -320,28 +322,29 @@ if ($result = $conn->query($query)) {
     /* fetch associative array */
     while ($row = $result->fetch_assoc()) {
       $t = json_encode($row);
+
         echo '
  <div class="col-lg-3 col-md-3 col-sm-2">
    <div class="thumbnail poster">
        <figure>
-           <a href=""><img src="' ;
+           <a href="' ;
+           echo "index.php?id=" . $row['id'];
+           echo '"><img src="' ;
            echo $row['thumbnail'];
            echo '" alt="Poster name" /></a>
            <div class="overlay"></div>
        </figure>
        <div class="caption">
            <a href="' ;
-           echo "index.php?id=" . $row['id'];
+          echo "index.php?id=" . $row['id'];
            echo '" class="poster-name">' ;
            echo $row['title'];
            echo '</a>
            <div class="language">HINDI</div>
            <ul class="list-inline tags">
+
            </ul>
        </div>
-       <a href="' ;
-           echo "index.php?id=" . $row['id'];
-           echo '"><button class="btn btn-primary btn-block">WATCH NOW</button></a>
    </div>
 </div>
 ';

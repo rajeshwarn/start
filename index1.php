@@ -192,6 +192,8 @@ span.psw {
     overflow: hidden;
     /* background-color: black; */
     background-image: url('images/shade.jpg');
+  }
+  
 </style>
 <script>
 function clicked(){
@@ -343,14 +345,16 @@ if ($result = $conn->query($query)) {
  <div class="col-lg-3 col-md-3 col-sm-2">
    <div class="thumbnail poster">
        <figure>
-           <a href=""><img src="' ;
+           <a href="' ;
+           echo "index.php?id=" . $row['id'];
+           echo '"><img src="' ;
            echo $row['thumbnail'];
            echo '" alt="Poster name" /></a>
            <div class="overlay"></div>
        </figure>
        <div class="caption">
            <a href="' ;
-           echo $row['v_id'];
+          echo "index.php?id=" . $row['id'];
            echo '" class="poster-name">' ;
            echo $row['title'];
            echo '</a>
@@ -359,9 +363,6 @@ if ($result = $conn->query($query)) {
 
            </ul>
        </div>
-       <a href="' ;
-           echo "index.php?id=" . $row['id'];
-           echo '"><button class="btn btn-primary btn-block">WATCH NOW</button></a>
    </div>
 </div>
 ';
