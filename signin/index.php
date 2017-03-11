@@ -97,7 +97,7 @@ if ($gClient->getAccessToken()) {
       $email = $_POST['email'];
         $password = $_POST['password'];
  
-        $query = "INSERT INTO user_register (firstname, lastname, email,password) VALUES ('$firstname', '$lastname', '$email','$password')";
+        $query = "INSERT INTO `user_register` (firstname, lastname, email,password) VALUES ('$firstname', '$lastname', '$email','$password')";
         $result = mysqli_query($conn, $query);
         if($result){
             $smsg = "User Created Successfully.";
@@ -134,7 +134,7 @@ if ($gClient->getAccessToken()) {
               <label>
                 Last Name<span class="req">*</span>
               </label>
-              <input type="text" required autocomplete="off" name="lastname" />
+              <input type="text"required autocomplete="off" name="lastname" />
             </div>
           </div>
 
@@ -142,25 +142,25 @@ if ($gClient->getAccessToken()) {
             <label>
               Email Address<span class="req">*</span>
             </label>
-            <input type="email" required autocomplete="off" name="email" />
+            <input type="email"required autocomplete="off" name="email" />
           </div>
 
           <div class="field-wrap">
             <label>
               Set A Password<span class="req">*</span>
             </label>
-            <input type="password" required id="txtNewPassword" name="password"  autocomplete="off"/>
+            <input type="password"required id="txtNewPassword" name="password"  autocomplete="off"/>
           </div>
 
           <div class="field-wrap">
             <label>
               Repeat A Password<span class="req">*</span>
             </label>
-            <input type="password" required  id="txtConfirmPassword" onChange="checkPasswordMatch();" name="repass" autocomplete="off"/>
+            <input type="password"required  id="txtConfirmPassword" onChange="checkPasswordMatch();" name="repass" autocomplete="off"/>
           </div>
     <div class="registrationFormAlert" id="divCheckPasswordMatch" style="color: white;">
 </div><br>
-          <button type="submit" class="button button-block" >Get Started</button>
+          <button type="submit" class="button button-block" onclick="submitform();" />Get Started</button>
 
      <?php if(isset($smsg)){ ?><div class="alert alert-success" role="alert"> <?php echo $smsg; ?> </div><?php } ?>
      <?php if(isset($fmsg)){ ?><div class="alert alert-success" role="alert"> <?php echo $fmsg; ?> </div><?php } ?>

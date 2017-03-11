@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
-<link href="css/video-js.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/videojs-resolution-switcher/0.4.2/videojs-resolution-switcher.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
-
-  <!-- If you'd like to support IE8 -->
-  <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-<script src="http://vjs.zencdn.net/5.11.9/video.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-resolution-switcher/0.4.2/videojs-resolution-switcher.js">
 <?php  //Start the Session
 session_start();
 require('connection.php');
@@ -52,187 +42,105 @@ $email = $_SESSION['email'];
       echo 'no session exist';
     }*/
 ?> -->
+
 <head>
-    <meta charset="utf-8">
-    <title>DAILY.TV</title>
-    <link href="https://fonts.googleapis.com/css?family=Anton|Fjalla+One|Francois+One|Libre+Franklin|Rambla|Ubuntu" rel="stylesheet">
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  
-<style>
-
-.video-js {
-    display: block;
-    vertical-align: top;
-    box-sizing: border-box;
-    color: #fff;
-    background-color: #000;
-    position: relative;
-    padding: 0;
-    font-size: 10px;
-    margin-top: 100px;
-    line-height: 1;
-    font-weight: normal;
-    font-style: normal;
-    font-family: Arial, Helvetica, sans-serif;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-/* Full-width input fields */
-/* Set a style for all buttons */
-/* Extra styles for the cancel button */
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-}
-/* Center the image and position the close button */
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-    position: relative;
-}
-img.avatar {
-    width: 40%;
-    border-radius: 50%;
-}
-.container {
-    padding: 16px;
-}
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 60px;
-}
-/* Modal Content/Box */
-.modal-content {
-    background-color: black;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-}
-/* The Close Button (x) */
-.close {
-    position: absolute;
-    right: 25px;
-    top: 0;
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
-}
-.close:hover,
-.close:focus {
-    color: red;
-    cursor: pointer;
-}
-/* Add Zoom Animation */
-.animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-}
-@-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
-    to {-webkit-transform: scale(1)}
-}
-    
-@keyframes animatezoom {
-    from {transform: scale(0)} 
-    to {transform: scale(1)}
-}
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
-}
-</style>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans|Sansita" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  
-<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css'>
-<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css'>
-<!-- Optional theme -->
-<!-- Latest compiled and minified JavaScript -->
-<script src="js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<!--for popup-->
-<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
-<!--close for popup-->
-   <!--  <link rel="stylesheet" type="text/css" href="css/style1.css">
-   <link rel="stylesheet" type="text/css" href="css/style.css">
-   <link rel="stylesheet" type="text/css" href="css/itv.css"> -->
-
 <style type="text/css">
-  .player {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    
-    height: auto;
-    /* background-color: black; */
-    background-image: url('images/shade.jpg');
-  }
- #id01 h1{
-  padding: 2em;
-  text-align: center;
-  color: white;
-  background-color: gray;
-  
- }
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0;background-color: black; }
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(images/loader-128x/gyro.gif) center no-repeat #fff;
+  background-color: #344557;
+
+}
 </style>
-<script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  
+<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css'>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="hover.css">
+<script src="js/jquery-1.11.1.min.js"></script>
+<link href="http://vjs.zencdn.net/5.17.0/video-js.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/slider.css">
+  <!-- If you'd like to support IE8 -->
+  <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap -->
+<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' media="all" />
+<!-- //bootstrap -->
+
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' media="all" />
+<!--start-smoth-scrolling-->
+<!-- fonts -->
+<link rel="stylesheet" type="text/css" href="css/animate.css">
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+<!-- //fonts -->
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+</head>
+
+<script type="text/javascript">
+ 
 function clicked(){
   document.getElementById('id01').style.display='block';
 }
+
 </script>
- <link href="css/bootstrap.min.css" rel="stylesheet">
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+<script type="text/javascript">
+ 
 
-    <!-- Bootstrap Dropdown Hover CSS -->
-    <link href="css/animate.min.css" rel="stylesheet">
-</head>
-
-<body>
-
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "itv";
-$dbname = "vod";
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+//paste this code under the head tag or in a separate js file.
+  // Wait for window load
+  $(window).load(function() {
+    // Animate loader off screen
+    $(".se-pre-con").fadeOut("slow");;
+  });
+</script>
+<style type="text/css">
+ 
+  /* Grow Shadow */
+.hvr-grow-shadow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
 }
-?>
+.hvr-grow-shadow:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+</style>
+<body>
+<div class="se-pre-con"></div>
+
 <?php 
 if (isset($_SESSION['email'])){
 include 'nav.php';
 }
 else
 {
-include'nav1.php';
+include'navv.php';
 }
 ?>
 <?php
@@ -257,11 +165,18 @@ function curl($url)
   curl_close($ch);
   return $page;
 }
+
+include 'connvideo.php';
+
 if (isset($_GET['id'])){
   $id = $_GET['id'];
 $query = "select * from vid_info  where id = $id";
 $result = $conn->query($query);
-$data = $result->fetch_array(MYSQLI_ASSOC);
+
+$data = $result->fetch_assoc();
+
+$data1 = json_encode($data); 
+
 $link = $data['v_id'];
 //include 'get.php';
 $api = 'http://api.getlinkdrive.com/getlink?url='.$link;
@@ -269,7 +184,7 @@ $sources = curl($api);
 if(isset($email)){
   echo '<div class="col-md-12 col-sm-12">
   <div class="player">
-  <center><video id="videojs_id" class=" video-js" controls preload="auto">
+  <center><video id="videojs_id" class="video-js vjs-paused" controls preload="auto">
     <p class="vjs-no-js">
       To view this video please enable JavaScript, and consider upgrading to a web browser that
       <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
@@ -280,12 +195,12 @@ if(isset($email)){
   else{
     echo '<div class="col-md-12 col-sm-12">
     <div class="player">
-    <div onclick="clicked()" style="width:auto;">
+    <div style="width:auto;">
      <center>
-     <video id="my-video" class=" video-js" controls preload="auto" width="640" height="504"
+     <a href="#small-dialog"><video id="my-video " class=" video-js img-responsive" controls preload="auto" width="640" height="404"
   poster="' ;
            echo $data['thumbnail'];
-           echo '" data-setup="{}">
+           echo '" data-setup="{}" onclick="clicked();" ></a>
   </video>
   </div>
     </div></div>
@@ -296,22 +211,134 @@ if(isset($email)){
 else include 'slider.php';
 ?>
 
-<div id="id01" class="modal" align="center">
-   <h1> please <a href= "signin/index.php">sign in </a>to view </h1>
-</div>
-<script>
-var modal = document.getElementById('id01');
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = 'none';
-    }
-}
-</script>
-<div class="container">
+
+
+
 
 <br>
+
  <div class="sections">
-  <h1>MAI KUCH BHI KAR SAKTI HU</h1>
+  <div id="id01" class="modal" align="center" style="background: rgba(39, 50, 56, 0.81); color: white;
+  font-size: 2em;">
+
+
+<h1>PLEASE SIGN IN TO WATCH THE VIDEOS</h1>
+<a href="http://thedailyeye.tv/start/signin/" style="color: white;">SIGNIN</a>
+<!-- <div class="row" align="center">
+<div class="col-md-12 col-sm-12" align="center">
+<div class="signin">
+
+          <center><a href="#small-dialog3" class="play-icon popup-with-zoom-anim">Sign Up</a></center>
+
+                
+                  <div id="small-dialog3" class="mfp-hide">
+                    <h3>Create Account</h3> 
+                    <div class="social-sits">
+                      <div class="facebook-button">
+                        <a href="http://thedailyeye.tv/start/fbconfig.php">Connect with Facebook</a>
+                      </div>
+                      <div class="chrome-button">
+                       <?php $authUrl = $gClient->createAuthUrl();
+    $display = '<a href="'.filter_var($authUrl, FILTER_SANITIZE_URL).'">
+                        Connect with Google </a>';
+    echo $display;
+    ?>
+                      </div>
+                      <div class="button-bottom">
+                        <p>Already have an account? <a href="#small-dialog" class="play-icon popup-with-zoom-anim">Login</a></p>
+                      </div>
+                    </div>
+                    <div class="signup">
+                      <form  method="get" >
+                      <input type="text" required  name="firstname" placeholder="firstname" />
+                      <input type="text" required  name="lastname" placeholder="lastname" />
+                      <input type="text" name="email"  placeholder="Email" required="required" pattern="([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?" title="Enter a valid email"/>
+                      <input type="password" name="password" placeholder="Password" required="required"  title="Minimum 6 characters required"  />
+                                              
+                        <input type="submit"  value="Sign Up"/>
+                        
+                      </form>
+                    </div>
+                    <div class="clearfix"> </div>
+                  </div>  
+                  <div id="small-dialog7" class="mfp-hide">
+                    <h3>Create Account</h3> 
+                    <div class="social-sits">
+                      <div class="facebook-button">
+                        <a href="http://thedailyeye.tv/start/fbconfig.php">Connect with Facebook</a>
+                      </div>
+                      <div class="chrome-button">
+                       <?php $authUrl = $gClient->createAuthUrl();
+    $display = '<a href="'.filter_var($authUrl, FILTER_SANITIZE_URL).'">
+                        Connect with Google </a>';
+    echo $display;
+    ?>
+                      </div>
+                      <div class="button-bottom">
+                        <p>Already have an account? <a href="#small-dialog" class="play-icon popup-with-zoom-anim">Login</a></p>
+                      </div>
+                    </div>
+                    <div class="signup">
+                      <form action="index.php" method="post">
+                        <input type="text" name="email" class="email" placeholder="Email" required="required" pattern="([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?" title="Enter a valid email"/>
+                        <input type="password" name="password" placeholder="Password" required="required"  title="Minimum 6 characters required"  />
+                        <input type="submit"  value="Sign In"/>
+                      </form>
+                    </div>
+                    <div class="clearfix"> </div>
+                  </div>
+                  <div id="small-dialog4" class="mfp-hide">
+                    <h3>Feedback</h3> 
+                    <div class="feedback-grids">
+                      <div class="feedback-grid">
+                        <p>Suspendisse tristique magna ut urna pellentesque, ut egestas velit faucibus. Nullam mattis lectus ullamcorper dui dignissim, sit amet egestas orci ullamcorper.</p>
+                      </div>
+                      <div class="button-bottom">
+                        <p><a href="#small-dialog" class="play-icon popup-with-zoom-anim">Sign in</a> to get started.</p>
+                      </div>
+                    </div>
+                  </div>
+        
+
+
+    <div class="signin">
+          <a href="#small-dialog" class="play-icon popup-with-zoom-anim">Sign In</a>
+          <div id="small-dialog" class="mfp-hide">
+            <h3>Login</h3>
+            <div class="social-sits">
+              <div class="facebook-button">
+                        <a href="http://thedailyeye.tv/start/fbconfig.php">Connect with Facebook</a>
+                      </div>
+                      <div class="chrome-button">
+                       <?php $authUrl = $gClient->createAuthUrl();
+    $display = '<a href="'.filter_var($authUrl, FILTER_SANITIZE_URL).'">
+                        Connect with Google </a>';
+    echo $display;
+    ?>
+                      </div>
+              <div class="button-bottom">
+                <p>New account? <a href="#small-dialog3" class="play-icon popup-with-zoom-anim">Signup</a></p>
+              </div>
+            </div>
+            <div class="signup">
+              <form action="index.php" method="post">
+                        <input type="text" name="email" class="email" placeholder="Email" required="required" pattern="([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?" title="Enter a valid email"/>
+                        <input type="password" name="password" placeholder="Password" required="required"  title="Minimum 6 characters required"  />
+                        <input type="submit"  value="Sign In"/>
+                      </form>
+              <div class="forgot">
+                <a href="#">Forgot password ?</a>
+              </div>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+        </div></div></div></div> -->
+</div>
+</div>
+<br>
+
+<div class="container">
+
 <?php
 
 $servername = "localhost";
@@ -332,8 +359,8 @@ if ($result = $conn->query($query)) {
 
         echo '
 
- <div class="col-lg-3 col-md-3 col-sm-2">
-   <div class="thumbnail poster">
+ <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+   <div class="thumbnail poster hvr-grow-shadow">
        <figure>
            <a href="' ;
            echo "index.php?id=" . $row['id'];
@@ -362,26 +389,20 @@ if ($result = $conn->query($query)) {
     $result->free();
 }
 ?>
-
 </div>
-<br>
-      
-
-  </div>
-  
-      
-
-
-        </div><!--/.container-->
+<div class="container"> 
+<?php include 'section.php';?>
+</div>
+</div>
+</div>
+<div class="container">
 <?php include 'footer.php';?>
-<script type="text/javascript">
-    // Carousel Auto-Cycle
-  $(document).ready(function() {
-    $('.carousel').carousel({
-      interval: 4000
-    })
-  });
-</script>
+</div>
+
+
+<script type="text/javascript" src="js/modernizr.custom.min.js"></script>   
+                  <script src="js/jquery-1.11.1.min.js"></script>
+
 <script type="text/javascript">
   $('ul.nav li.dropdown').hover(function() {
   $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
@@ -389,9 +410,41 @@ if ($result = $conn->query($query)) {
   $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
 });
 </script>
-<script src="js/jquery-1.11.0.min.js"></script>
+ 
+ 
+                  <link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+                  <script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+<script>
+                      $(document).ready(function() {
+                      $('.popup-with-zoom-anim').magnificPopup({
+                        type: 'inline',
+                        fixedContentPos: false,
+                        fixedBgPos: true,
+                        overflowY: 'auto',
+                        closeBtnInside: true,
+                        preloader: false,
+                        midClick: true,
+                        removalDelay: 300,
+                        mainClass: 'my-mfp-zoom-in'
+                      });
+                         
+                         // Carousel Auto-Cycle
+  $(document).ready(function() {
+    $('.carousel').carousel({
+      interval: 3000
+    })
+  });                             
+                      });
+                  </script>
 
-<script src="js/bootstrap.min.js"></script>
+<!-- <script src="js/jquery-1.11.0.min.js"></script>
+ -->
+     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+
+ <script src="js/jquery-1.11.0.min.js"></script>
+                
+
 
     <!-- Bootstrap Dropdown Hover JS -->
 </body>

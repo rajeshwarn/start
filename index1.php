@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,6 +63,32 @@ $email = $_SESSION['email'];
     <title>DAILY.TV</title>
     <link href="https://fonts.googleapis.com/css?family=Anton|Fjalla+One|Francois+One|Libre+Franklin|Rambla|Ubuntu" rel="stylesheet"><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   
+  <script type="text/javascript">
+$(document).ready(function(){
+ $("#load").click(function(){
+  loadmore();
+ });
+});
+
+function loadmore()
+{
+ var val = document.getElementById("result_no").value;
+ $.ajax({
+ type: 'post',
+ url: 'fetch.php',
+ data: {
+  getresult:val
+ },
+ success: function (response) {
+  var content = document.getElementById("result_para");
+  content.innerHTML = content.innerHTML+response;
+
+  // We increase the value by 2 because we limit the results by 2
+  document.getElementById("result_no").value = Number(val)+2;
+ }
+ });
+}
+</script>
 <style>
 /* Full-width input fields */
 
@@ -351,7 +379,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$query = "select * from vid_info";
+$query = "select * from vid_info limit 0,2";
 
 if ($result = $conn->query($query)) {
 
@@ -360,9 +388,9 @@ if ($result = $conn->query($query)) {
       $t = json_encode($row);
 
 
-        echo '
+        echo '<p id="result_para">
  <div class="col-lg-3 col-md-3 col-sm-2">
-   <div class="thumbnail poster">
+   <div class="thumbnail poster" >
        <figure>
            <a href="' ;
            echo "index.php?id=" . $row['id'];
@@ -381,7 +409,7 @@ if ($result = $conn->query($query)) {
            <ul class="list-inline tags">
 
            </ul>
-       </div>
+       </div></div>
    </div>
 </div>
 ';
@@ -396,7 +424,8 @@ if ($result = $conn->query($query)) {
 </div>
 <br>
       
-
+ <input type="hidden" id="result_no" value="2">
+  <input type="button" id="load" value="Load More Results">
   </div>
   <div class="container">
     <div class="col-md-12">

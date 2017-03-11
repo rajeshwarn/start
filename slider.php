@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
  
       <link rel="stylesheet" href="css/slider.css">
-
+<link rel="stylesheet" type="text/css" href="css/hower.css">
   
 </head>
 
@@ -33,9 +33,10 @@
       <div class="item active">
         <img src="images/1 slider-itv.JPG" alt="">
         <div class="carousel-caption">
+        <!-- <img src="images/play-button.png" class="img-responsive"> -->
         <h1>MAI KUCH BHI KAR SAKTI HU</h1>
         <p>Main Kuch Bhi Kar Sakti Hoon revolves around the inspiring journey of Sneha Mathur, a doctor working in Mumbai.</p>
-        <a href="index.php?id=2"><button type="button" class="btn btn-success">WATCH NOW</button></a>
+        <a href="index.php?id=2"><button type="button" class="btn btn-success hvr-icon-drop">WATCH NOW</button></a>
         </div><!-- /.carousel-caption -->
       </div><!-- /Slide1 -->
 

@@ -2,6 +2,7 @@
 <html lang="en">
 
 <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+
 <link href="http://vjs.zencdn.net/5.11.9/video-js.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/videojs-resolution-switcher/0.4.2/videojs-resolution-switcher.css" rel="stylesheet">
 
@@ -61,119 +62,18 @@ $email = $_SESSION['email'];
     <title>DAILY.TV</title>
     <link href="https://fonts.googleapis.com/css?family=Anton|Fjalla+One|Francois+One|Libre+Franklin|Rambla|Ubuntu" rel="stylesheet"><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   
-<style>
-/* Full-width input fields */
 
-/* Set a style for all buttons */
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-}
-
-/* Center the image and position the close button */
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-    position: relative;
-}
-
-img.avatar {
-    width: 40%;
-    border-radius: 50%;
-}
-
-.container {
-    padding: 16px;
-}
-
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 60px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: black;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button (x) */
-.close {
-    position: absolute;
-    right: 25px;
-    top: 0;
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: red;
-    cursor: pointer;
-}
-
-/* Add Zoom Animation */
-.animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
-    to {-webkit-transform: scale(1)}
-}
-    
-@keyframes animatezoom {
-    from {transform: scale(0)} 
-    to {transform: scale(1)}
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
-}
-</style>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans|Sansita" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-  <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
-<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css'>
-
-<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css'>
 
 <!-- Optional theme -->
 
 
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
   
 
@@ -181,35 +81,13 @@ span.psw {
 <!--for popup-->
 <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
 <!--close for popup-->
-    <link rel="stylesheet" type="text/css" href="css/style1.css">
-   <link rel="stylesheet" type="text/css" href="css/style.css">
+
    <link rel="stylesheet" type="text/css" href="css/itv.css">
 
-<style type="text/css">
-  .player {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    /* background-color: black; */
-    background-image: url('images/shade.jpg');
-</style>
-<script>
-function clicked(){
-  document.getElementById('id01').style.display='block';
-}
-</script>
- <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Bootstrap Dropdown Hover CSS -->
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/bootstrap-dropdownhover.min.css" rel="stylesheet">
 </head>
 
 <body>
-<script src="js/bootstrap.min.js"></script>
 
-    <!-- Bootstrap Dropdown Hover JS -->
-    <script src="js/bootstrap-dropdownhover.min.js"></script>
 <?php
 $servername = "localhost";
 $username = "root";
@@ -447,6 +325,8 @@ window.onclick = function(event) {
   });
 
 </script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script type="text/javascript">
   $('ul.nav li.dropdown').hover(function() {
   $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
@@ -454,6 +334,5 @@ window.onclick = function(event) {
   $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
 });
 </script>
-
 </body>
 </html>
