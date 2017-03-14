@@ -6,9 +6,33 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 .player {
     margin-top: 50px;
+    width: 70%;
+    height: auto;
 }
-#id01{
-    display: none;
+.vjs-player{
+    width: 70%;
+    height: 50%;
+}
+
+#watch{
+    background: #FFF;
+    padding: 20px;
+    text-align: left;
+    max-width: 64%;
+    margin: 40px auto;
+    position: relative;
+    text-align: center;
+    
+    
+    -ms-box-shadow: 0 0 8px 2px #CACACA;
+    -o-box-shadow: 0 0 8px 2px #CACACA;
+    -moz-box-shadow: 0 0 8px 2px #CACACA;
+   
+}
+#watch a {
+    color: black;
+    font-size: 1.5em;
+
 }
 html {
     font-family: sans-serif;

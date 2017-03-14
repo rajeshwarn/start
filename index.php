@@ -182,9 +182,10 @@ $link = $data['v_id'];
 $api = 'http://api.getlinkdrive.com/getlink?url='.$link;
 $sources = curl($api);
 if(isset($email)){
-  echo '<div class="col-md-12 col-sm-12">
+  echo '<div class="container">
+  <center>
   <div class="player">
-  <center><video id="videojs_id" class="video-js vjs-paused" controls preload="auto">
+  <video id="videojs_id" class="video-js vjs-paused" controls preload="auto">
     <p class="vjs-no-js">
       To view this video please enable JavaScript, and consider upgrading to a web browser that
       <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
@@ -193,19 +194,23 @@ if(isset($email)){
   </div>
   </div>';}
   else{
-    echo '<div class="col-md-12 col-sm-12">
-    <div class="player">
-    <div style="width:auto;">
-     <center>
-     <a href="#small-dialog"><video id="my-video " class=" video-js img-responsive" controls preload="auto" width="640" height="404"
+    echo '<div class="container">
+    <center>
+    <div href="#watch" class="player play-icon popup-with-zoom-anim" >
+    
+     <a href="#watch" class="play-icon popup-with-zoom-anim"><video id="my-video" class="video-js img-responsive vjs-fluid" controls preload="auto" width="640" height="264"
   poster="' ;
            echo $data['thumbnail'];
-           echo '" data-setup="{}" onclick="clicked();" ></a>
-  </video>
-  </div>
+           echo '" data-setup="{}">
+  </video></a>
     </div></div>
 </center>
+<br>
+<br>
+
+
 ';
+
 }
   include 'play.php';}
 else include 'slider.php';
@@ -217,16 +222,13 @@ else include 'slider.php';
 
 <br>
 
- <div class="sections">
-  <div id="id01" class="modal" align="center" style="background: rgba(39, 50, 56, 0.81); color: white;
-  font-size: 2em;">
+  
+  <div id="watch" class="mfp-hide">
 
+  <h1>PLEASE SIGN IN TO WATCH THE VIDEOS</h1>
+  <a href="http://thedailyeye.tv/start/signin/">SIGNIN</a>
+  </div>
 
-<h1>PLEASE SIGN IN TO WATCH THE VIDEOS</h1>
-<a href="http://thedailyeye.tv/start/signin/" style="color: white;">SIGNIN</a>
-
-</div>
-</div>
 <br>
 
 <div class="container">

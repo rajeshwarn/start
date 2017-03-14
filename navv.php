@@ -135,7 +135,7 @@ $conn->close();
         </div>
             </div>
  <ul class="nav navbar-nav navbar-right">
- <li><div class="signin">
+ <div class="signin">
 					<a href="#small-dialog3" class="play-icon popup-with-zoom-anim">Sign Up</a>
 					<!-- pop-up-box -->
 									
@@ -211,9 +211,9 @@ $conn->close();
 									</div>
 										
 				</div>
-</li>
 
-      <li><div class="signin">
+
+     <div class="signin">
 					<a href="#small-dialog" class="play-icon popup-with-zoom-anim">Sign In</a>
 					<div id="small-dialog" class="mfp-hide">
 						<h3>Login</h3>
@@ -244,7 +244,7 @@ $conn->close();
 						</div>
 						<div class="clearfix"> </div>
 					</div>
-				</div></li> 
+				</div>
     </ul>
 </div>
 </div>
