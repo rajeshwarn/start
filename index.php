@@ -92,11 +92,7 @@ if it's not present, don't show loader */
 
 </head>
 
-<script type="text/javascript">
- 
-function clicked(){
-  document.getElementById('id01').style.display='block';
-}
+
 
 </script>
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
@@ -182,7 +178,7 @@ $link = $data['v_id'];
 $api = 'http://api.getlinkdrive.com/getlink?url='.$link;
 $sources = curl($api);
 if(isset($email)){
-  echo '<div class="container">
+  echo '
   <center>
   <div class="player">
   <video id="videojs_id" class="video-js vjs-paused" controls preload="auto">
@@ -190,20 +186,20 @@ if(isset($email)){
       To view this video please enable JavaScript, and consider upgrading to a web browser that
       <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
     </p>
-  </video></center>
-  </div>
-  </div>';}
+  </video>
+  </div></center>
+  ';}
   else{
-    echo '<div class="container">
-    <center>
-    <div href="#watch" class="player play-icon popup-with-zoom-anim" >
-    
-     <a href="#watch" class="play-icon popup-with-zoom-anim"><video id="my-video" class="video-js img-responsive vjs-fluid" controls preload="auto" width="640" height="264"
+    echo '
+    <center> 
+    <div href="#watch" class="player play-icon popup-with-zoom-anim">
+       
+    <video id="my-video" class="video-js img-responsive vjs-fluid" controls preload="auto" width="640" height="264"
   poster="' ;
-           echo $data['thumbnail'];
-           echo '" data-setup="{}">
-  </video></a>
-    </div></div>
+           echo $data['thumbnail']; 
+           echo ' " href="#watch" data-setup="{}">
+  </video>
+    </div>
 </center>
 <br>
 <br>

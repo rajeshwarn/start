@@ -58,31 +58,7 @@ if ($gClient->getAccessToken()) {
          /*$output .= '<br/>Logout from <a href="logout.php">Google</a>';*/
 ?>
 
-<?php
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
-  require('connection.php');
-    // If the values are posted, insert them into the database.
-    if (isset($_GET['email']) && isset($_GET['password'])){
-        $firstname = $_GET['firstname'];
-        $lastname = $_GET['lastname'];
-      $email = $_GET['email'];
-        $password = $_GET['password'];
 
-
-        $sql = "INSERT INTO user_register (firstname, lastname, email,password)
-VALUES ('$firstname', '$lastname', '$email','$password')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-}
-$conn->close();
-
-?>
-   
        
 			 <nav id="header" class="navbar navbar-static-top">
             <div id="header-container" class="container navbar-container">
@@ -150,7 +126,7 @@ $conn->close();
 											<div class="chrome-button">
 											 <?php $authUrl = $gClient->createAuthUrl();
     $display = '<a href="'.filter_var($authUrl, FILTER_SANITIZE_URL).'">
-												Connect with Google </a>';
+												Connect with Google &nbsp;&nbsp;&nbsp;&nbsp;</a>';
     echo $display;
     ?>
 											</div>
@@ -158,8 +134,9 @@ $conn->close();
 												<p>Already have an account? <a href="#small-dialog" class="play-icon popup-with-zoom-anim">Login</a></p>
 											</div>
 										</div>
-										<div class="signup">
-											<form  method="get" >
+										<div  class="signup">
+                    <div id="contactResponse"></div>
+											<form id="contactForm"  action="registration.php" method="post" >
 											<input type="text" required  name="firstname" placeholder="firstname" />
 											<input type="text" required  name="lastname" placeholder="lastname" />
 											<input type="text" name="email"  placeholder="Email" required="required" pattern="([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?" title="Enter a valid email"/>
@@ -181,7 +158,7 @@ $conn->close();
 											<div class="chrome-button">
 											 <?php $authUrl = $gClient->createAuthUrl();
     $display = '<a href="'.filter_var($authUrl, FILTER_SANITIZE_URL).'">
-												Connect with Google </a>';
+												Connect with Google  &nbsp;&nbsp;&nbsp;&nbsp;</a>';
     echo $display;
     ?>
 											</div>
