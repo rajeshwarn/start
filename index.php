@@ -69,7 +69,7 @@ if it's not present, don't show loader */
 
 <link rel="stylesheet" type="text/css" href="hover.css">
 <script src="js/jquery-1.11.1.min.js"></script>
-<link href="http://vjs.zencdn.net/5.17.0/video-js.css" rel="stylesheet">
+
 <link rel="stylesheet" type="text/css" href="css/slider.css">
   <!-- If you'd like to support IE8 -->
   <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
@@ -88,6 +88,11 @@ if it's not present, don't show loader */
 <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 <!-- //fonts -->
+ 
+
+  <!-- <script src="../videojs.watermark.js"></script> -->
+  <!-- For debugging -->
+  <script src="js/videojs.watermark.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 
 </head>
@@ -253,7 +258,7 @@ if ($result = $conn->query($query)) {
    <div class="thumbnail poster hvr-grow-shadow">
        <figure>
            <a href="' ;
-           echo "index.php?id=" . $row['id'];
+           echo "index.php?id=" . urlencode($row['id']);
            echo '"><img src="' ;
            echo $row['thumbnail'];
            echo '" alt="Poster name" /></a>
@@ -261,7 +266,7 @@ if ($result = $conn->query($query)) {
        </figure>
        <div class="caption">
            <a href="' ;
-          echo "index.php?id=" . $row['id'];
+          echo "index.php?id=" . urlencode($row['id']);
            echo '" class="poster-name">' ;
            echo $row['title'];
            echo '</a>
@@ -334,7 +339,29 @@ if ($result = $conn->query($query)) {
 
  <script src="js/jquery-1.11.0.min.js"></script>
                 
+<script type="text/javascript">
 
+    var video = videojs('videojs_id');
+      video.on('pause', function() {
+      this.bigPlayButton.show();
+
+      // Now the issue is that we need to hide it again if we start playing
+      // So every time we do this, we can create a one-time listener for play events.
+      video.one('play', function() {
+        this.bigPlayButton.hide();
+      });
+    });
+    
+
+// Set value to the plugin
+video.watermark({
+  file: 'images/logo (Custom).jpg',
+  xpos: 100,
+  ypos: 0,
+  xrepeat: 0,
+  opacity: 0.5
+  });
+  </script>
 
     <!-- Bootstrap Dropdown Hover JS -->
 </body>

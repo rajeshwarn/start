@@ -1,14 +1,29 @@
+<!DOCTYPE html>
+<html>
+<link href="css/video-js.css" rel="stylesheet">
+  <link href="css/videojs.watermark.css" rel="stylesheet">
+<head>
+
 <style type="text/css">
 	body {
 background-color: #273238;
 	}
-</style>  
+</style>  	
+</head>
+<body>
 
 <script src="http://vjs.zencdn.net/5.11.9/video.js"></script>
+
+  <script src="js/video.js"></script>
+  
+  <!-- <script src="../videojs.watermark.js"></script> -->
+  <!-- For debugging -->
+  <script src="js/videojs.watermark.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-resolution-switcher/0.4.2/videojs-resolution-switcher.js"></script>
 
 
 	<script type="text/javascript">
+
 		videojs('videojs_id', {
 	       
 	        fluid: true,
@@ -24,15 +39,17 @@ background-color: #273238;
 	            }
 	        }
 	    });
-	    var video = videojs('videojs_id');
-    video.on('pause', function() {
-      this.bigPlayButton.show();
+	/*var my_video_id = videojs('videojs_id');
 
-      // Now the issue is that we need to hide it again if we start playing
-      // So every time we do this, we can create a one-time listener for play events.
-      video.one('play', function() {
-        this.bigPlayButton.hide();
-      });
-    });
+	  my_video_id.watermark({
+  file: 'images/logo (Custom).jpg',
+  xpos: 0,
+  ypos: 0,
+  xrepeat: 0,
+  opacity: 0.5
+  });*/
 	</script>
 	
+</body>
+</html>
+

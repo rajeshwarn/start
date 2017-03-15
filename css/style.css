@@ -763,7 +763,7 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 }
 .recommended-grid-info {
     box-shadow: 0px 0 2px #C1C1C1 !important;
-    background: none;
+    background-color: white;
 }
 .heading{
 	float:left;
