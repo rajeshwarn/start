@@ -8,6 +8,9 @@
 	body {
 background-color: #273238;
 	}
+	.vjs-paused .vjs-has-started .vjs-big-play-button {
+  display: block;
+}
 </style>  	
 </head>
 <body>

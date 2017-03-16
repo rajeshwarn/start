@@ -134,7 +134,12 @@ if it's not present, don't show loader */
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-.video-js.vjs-default-skin.vjs-paused.vjs-big-play-button {display:block !important;}
+.topcontainer {
+  padding-top: 70px;
+}
+body{
+  background-color: #273238;
+}
 </style>
 <body>
 <div class="se-pre-con"></div>
@@ -148,6 +153,7 @@ else
 include'navv.php';
 }
 ?>
+
 <?php
 function curl($url)
 {
@@ -172,6 +178,7 @@ function curl($url)
 }
 
 include 'connvideo.php';
+
 
 if (isset($_GET['id'])){
   $id = $_GET['id'];
@@ -218,7 +225,7 @@ if(isset($email)){
 
 }
   include 'play.php';}
-else include 'slider.php';
+
 ?>
 
 
@@ -237,7 +244,10 @@ else include 'slider.php';
 <br>
 
 <div class="container">
-
+<br>
+<br>
+<br>
+<h3 style='color:white;'> MAI KUCH BHI KAR SAKTI HU</h3>
 <?php
 
 $servername = "localhost";
@@ -289,15 +299,13 @@ if ($result = $conn->query($query)) {
 }
 ?>
 </div>
-<div class="container"> 
-<?php include 'section.php';?>
-</div>
+
 </div>
 </div>
 <div class="container">
 <?php include 'footer.php';?>
 </div>
-
+</div>
 
 <script type="text/javascript" src="js/modernizr.custom.min.js"></script>   
                   <script src="js/jquery-1.11.1.min.js"></script>
@@ -347,12 +355,12 @@ if ($result = $conn->query($query)) {
 
     var video = videojs('videojs_id');
       video.on('pause', function() {
-      this.BigPlayButton.show();
+      this.bigPlayButton.show();
 
       // Now the issue is that we need to hide it again if we start playing
       // So every time we do this, we can create a one-time listener for play events.
       video.one('play', function() {
-        this.BigPlayButton.hide();
+        this.bigPlayButton.hide();
       });
     });
     
