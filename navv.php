@@ -76,7 +76,7 @@ if ($gClient->getAccessToken()) {
                 </div>
                 <div id="navbar" class="collapse navbar-collapse ">
                <ul class="nav navbar-nav">
-                    <li><a href='index.php'>HOME</a></li>
+                    <li class="active"><a href='index.php'>HOME</a></li>
                    
                     <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"> SHOW<b class="caret"></b></a>
@@ -252,4 +252,11 @@ if ($gClient->getAccessToken()) {
     $('#header').addClass('navbar-fixed-top');
     $('#menu2').removeClass('navbar-static-top');
 }
+
+</script>
+<script type="text/javascript">
+   $(document).on('click', '.navbar-nav li', function() {
+       $(".navbar-nav li").removeClass("active");
+       $(this).addClass("active");
+   });
 </script>

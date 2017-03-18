@@ -61,9 +61,7 @@ if it's not present, don't show loader */
   background-color: #344557;
 
 }
-.vjs-paused .vjs-has-started .vjs-big-play-button {
-  display: block;
-}
+
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   
@@ -366,7 +364,12 @@ video.watermark({
   opacity: 0.5
   });
   </script>
-
+<script type="text/javascript">
+   $(document).on('click', '.navbar-nav li', function() {
+       $(".navbar-nav li").removeClass("active");
+       $(this).addClass("active");
+   });
+</script>
     <!-- Bootstrap Dropdown Hover JS -->
 </body>
 </html>
