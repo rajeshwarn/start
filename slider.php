@@ -31,30 +31,34 @@
 
       <!-- Slide 1 : Active -->
       <div class="item active">
-        <img src="images/1 slider-itv.JPG" alt="">
+        <img src="img/slider/SLIDER 1 (FILEminimizer).jpg" alt="">
         <div class="carousel-caption">
         <!-- <img src="images/play-button.png" class="img-responsive"> -->
         <h1>MAI KUCH BHI KAR SAKTI HU</h1>
         <p>Main Kuch Bhi Kar Sakti Hoon revolves around the inspiring journey of Sneha Mathur, a doctor working in Mumbai.</p>
-        <a href="index.php?id=2"><button type="button" class="btn btn-success hvr-icon-drop">WATCH NOW</button></a>
+        <a href="episode.php"><button type="button" class="btn btn-success hvr-icon-drop">WATCH NOW</button></a>
         </div><!-- /.carousel-caption -->
       </div><!-- /Slide1 -->
 
 
       <!-- Slide 2 -->
       <div class="item ">
-        <img src="images/2 slider-itv.JPG" alt="">
+        <img src="img/slider/SLIDER 2 (FILEminimizer).jpg" alt="">
         <div class="carousel-caption">
-<a href="index.php?id=2"><button type="button" class="btn btn-success">WATCH NOW</button></a>
+        <h1>MAI KUCH BHI KAR SAKTI HU</h1>
+        <p>Main Kuch Bhi Kar Sakti Hoon revolves around the inspiring journey of Sneha Mathur, a doctor working in Mumbai.</p>
+<a href="episode.php"><button type="button" class="btn btn-success">WATCH NOW</button></a>
         </div><!-- /.carousel-caption -->
       </div><!-- /Slide2 -->
 
 
       <!-- Slide 3 -->
       <div class="item ">
-        <img src="images/3 slider-itv.JPG" alt="">
+        <img src="img/slider/SLIDER 3 (FILEminimizer).jpg" alt="">
         <div class="carousel-caption">
-<a href="index.php?id=3"><button type="button" class="btn btn-success">WATCH NOW</button></a>
+        <h1>MAI KUCH BHI KAR SAKTI HU</h1>
+        <p>Main Kuch Bhi Kar Sakti Hoon revolves around the inspiring journey of Sneha Mathur, a doctor working in Mumbai.</p>
+<a href="episode.php"><button type="button" class="btn btn-success">WATCH NOW</button></a>
         </div><!-- /.carousel-caption -->
       </div><!-- /Slide3 -->
 

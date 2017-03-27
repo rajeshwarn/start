@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -143,6 +144,7 @@ include 'nav.php';
 }
 else
 {
+
 include'navv.php';
 }
 ?>
@@ -198,9 +200,11 @@ if(isset($email)){
   ';}
   else{
     echo '
-    <center> 
+    <center>
+     
+
     <div href="#watch" class="player play-icon popup-with-zoom-anim">
-       
+    
     <video id="my-video" class="video-js img-responsive vjs-fluid" controls preload="auto" width="640" height="264"
   poster="' ;
            echo $data['thumbnail']; 
@@ -234,59 +238,6 @@ else include 'slider.php';
 
 <br>
 
-<div class="container">
-
-<?php
-
-$servername = "localhost";
-$username = "root";
-$password = "itv";
-$dbname = "vod";
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-$query = "select * from vid_info";
-if ($result = $conn->query($query)) {
-    /* fetch associative array */
-    while ($row = $result->fetch_assoc()) {
-      $t = json_encode($row);
-
-        echo '
-
- <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-   <div class="thumbnail poster hvr-grow-shadow">
-       <figure>
-           <a href="' ;
-           echo "index.php?id=" . urlencode($row['id']);
-           echo '"><img src="' ;
-           echo $row['thumbnail'];
-           echo '" alt="Poster name" /></a>
-           <div class="overlay"></div>
-       </figure>
-       <div class="caption">
-           <a href="' ;
-          echo "index.php?id=" . urlencode($row['id']);
-           echo '" class="poster-name">' ;
-           echo $row['title'];
-           echo '</a>
-           <div class="language">HINDI</div>
-           <ul class="list-inline tags">
-
-           </ul>
-       </div>
-   </div>
-</div>
-';
-        
-       }
-    /* free result set */
-    $result->free();
-}
-?>
-</div>
 <div class="container"> 
 <?php include 'section.php';?>
 </div>

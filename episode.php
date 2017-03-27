@@ -208,6 +208,7 @@ if(isset($email)){
            echo $data['thumbnail']; 
            echo ' " href="#watch" data-setup="{}">
   </video>
+  <h1>';echo $data['title']; echo '</h1>
     </div>
 </center>
 <br>
@@ -240,7 +241,7 @@ if(isset($email)){
 <div class="recommended">
           <div class="recommended-grids">
             <div class="recommended-info">
-              <h3>MOVIES</h3>
+              <h3>Recommended</h3>
             </div>
 <?php
 
@@ -254,21 +255,36 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$query = "select * from movies";
+$query = "select * from vid_info";
 if ($result = $conn->query($query)) {
     /* fetch associative array */
     while ($row = $result->fetch_assoc()) {
       $t = json_encode($row);
 
-        echo ' <div class="col-md-3 portfolio-item">
-                <a href="' ;
-           echo "movie.php?id=" . $row['id'];
-           echo '">
-                    <img class="img-responsive" src="' ;
+        echo '
+            
+            <div class="col-md-3 resent-grid recommended-grid">
+              <div class="resent-grid-img recommended-grid-img">
+                 <a href="' ;
+           echo "episode.php?id=" . $row['id'];
+           echo '"><img src="' ;
            echo $row['thumbnail'];
-           echo '" alt="">
-                </a>
+           echo '" alt="Poster name" /></a>
+                <div class="time small-time">
+                
+                </div>
+                
+              </div>
+              <div class="resent-grid-info recommended-grid-info video-info-grid">
+                <h5><a href="' ;
+           echo "episode.php?id=" . $row['id'];
+           echo '" class="title">' ;
+           echo $row['title'];
+           echo '</a></h5>
+                
+              </div>
             </div>
+           
           
 ';
         

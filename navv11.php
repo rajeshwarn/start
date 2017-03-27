@@ -35,22 +35,22 @@ if ($gClient->getAccessToken()) {
     //Render facebook profile data
     if(!empty($userData)){
         
-     /*$output = '<h1>Google+ Profile Details </h1>';
-        $output .= '<img src="'.$userData['picture'].'" width="auto" height="auto">';
-        $output .= '<br/>Google ID : ' . $userData['oauth_uid'];
         $output .= '<br/>Name : ' . $userData['first_name'].' '.$userData['last_name'];
         $output .= '<br/>Email : ' . $userData['email'];
         $output .= '<br/>Gender : ' . $userData['gender'];
         $output .= '<br/>Locale : ' . $userData['locale'];
         $output .= '<br/>Logged in with : Google';
         $output .= '<br/><a href="'.$userData['link'].'" target="_blank">Click to Visit Google+ Page</a>';
-        $output .= '<br/>Logout from <a href="logout.php">Google</a>'; */
+        $output .= '<br/>Logout from <a href="logout.php">Google</a>'; 
          $output = $userData['email'];
          $_SESSION['email'] = $output;
          
          header("Location: index.php");
          /*$output .= '<br/>Logout from <a href="logout.php">Google</a>';*/
         
+     /*$output = '<h1>Google+ Profile Details </h1>';
+        $output .= '<img src="'.$userData['picture'].'" width="auto" height="auto">';
+        $output .= '<br/>Google ID : ' . $userData['oauth_uid'];
    }else{
         $output = '<h3 style="color:red">Some problem occurred, please try again.</h3>';
     }
@@ -58,6 +58,29 @@ if ($gClient->getAccessToken()) {
          /*$output .= '<br/>Logout from <a href="logout.php">Google</a>';*/
 ?>
 
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.search-box input[type="text"]').on("keyup input", function(){
+        /* Get input value on change */
+        var term = $(this).val();
+        var resultDropdown = $(this).siblings(".result");
+        if(term.length){
+            $.get("backend-search.php", {query: term}).done(function(data){
+                // Display the returned data in browser
+                resultDropdown.html(data);
+            });
+        } else{
+            resultDropdown.empty();
+        }
+    });
+    
+    // Set search input value on click of result item
+    $(document).on("click", ".result p", function(){
+        $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
+        $(this).parent(".result").empty();
+    });
+});
+</script>
 
        
 			 <nav id="header" class="navbar navbar-static-top">
@@ -103,9 +126,12 @@ if ($gClient->getAccessToken()) {
           </ul>
 
                      <div class="col-sm-3 col-md-4">
-        <div class="input-group">
+        <div class="input-group search-box">
             <input type="text" class="form-control" placeholder="Search" name="q">
-            
+            <div class="result"></div>
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
         </div>
             </div>
  <ul class="nav navbar-nav navbar-right">
@@ -177,7 +203,7 @@ if ($gClient->getAccessToken()) {
 										<h3>Feedback</h3> 
 										<div class="feedback-grids">
 											<div class="feedback-grid">
-												<p>Suspendisse tristique magna ut urna pellentesque, ut egestas velit faucibus. Nullam mattis lectus ullamcorper dui dignissim, sit amet egestas orci ullamcorper.</p>
+												<p></p>
 											</div>
 											<div class="button-bottom">
 												<p><a href="#small-dialog" class="play-icon popup-with-zoom-anim">Sign in</a> to get started.</p>

@@ -76,10 +76,7 @@
           
                      <div class="col-sm-3 col-md-4">
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search" name="q">
-            <div class="input-group-btn">
-                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-            </div>
+            <input type="text" name="search" placeholder="Search..">
         </div>
         </div>
  <ul class="nav navbar-nav navbar-right">
