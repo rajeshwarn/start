@@ -18,7 +18,7 @@
 					</div>
 					<div class="col-md-4 resent-grid recommended-grid slider-top-grids">
 						<div class="resent-grid-img recommended-grid-img">
-							<a href="episode.php"><img src="img/MAINPAGE/MAI KUCH BHI KAR SAKTI HU .JPG" alt="" /></a>
+							<a href="episode.php"><img src="img/MAINPAGE/mkbshS1.jpg" alt="" /></a>
 							
 							
 						</div>
