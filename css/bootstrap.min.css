@@ -3194,7 +3194,7 @@ textarea.input-lg {
     display: inline-block;
     padding: 6px 12px;
     margin-bottom: 0;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 400;
     line-height: 1.42857143;
     text-align: center;
@@ -6714,7 +6714,7 @@ button.close {
         width: 30px;
         height: 30px;
         margin-top: -15px;
-        font-size: 30px
+        font-size: 22px;
     }
     .carousel-control .glyphicon-chevron-left,
     .carousel-control .icon-prev {
@@ -6729,7 +6729,7 @@ button.close {
 
     }
     .carousel-caption p{
-       font-size: 18px;
+       font-size: 16px;
    
     }
     .carousel-caption {
