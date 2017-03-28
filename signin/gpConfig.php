@@ -10,7 +10,7 @@ include_once 'src/contrib/Google_Oauth2Service.php';
  */
 $clientId = '504763847297-c1fudk9sattvf6ladhcd26e4kaq933q2.apps.googleusercontent.com';
 $clientSecret = 'euRstYzTBorv2EaAYrkjcObt';
-$redirectURL = 'http://thedailyeye.tv/start/signin/index.php';
+$redirectURL = 'http://thedailyeye.tv/start/index.php';
 
 //Call Google API
 $gClient = new Google_Client();

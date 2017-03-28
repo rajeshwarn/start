@@ -294,6 +294,7 @@ if ($result = $conn->query($query)) {
 }
 ?>
  <div class="clearfix"> </div>
+ <br>
 </div>
         </div>
 </div>
