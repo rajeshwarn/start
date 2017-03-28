@@ -1,20 +1,19 @@
 <?php
 session_start();
-
-
 // added in v4.0.0
 require_once 'autoload.php';
-use Facebook\FacebookSession;
-use Facebook\FacebookRedirectLoginHelper;
-use Facebook\FacebookRequest;
-use Facebook\FacebookResponse;
-use Facebook\FacebookSDKException;
-use Facebook\FacebookRequestException;
-use Facebook\FacebookAuthorizationException;
-use Facebook\GraphObject;
-use Facebook\Entities\AccessToken;
-use Facebook\HttpClients\FacebookCurlHttpClient;
-use Facebook\HttpClients\FacebookHttpable;
+require 'functions.php';  
+use FacebookFacebookSession;
+use FacebookFacebookRedirectLoginHelper;
+use FacebookFacebookRequest;
+use FacebookFacebookResponse;
+use FacebookFacebookSDKException;
+use FacebookFacebookRequestException;
+use FacebookFacebookAuthorizationException;
+use FacebookGraphObject;
+use FacebookEntitiesAccessToken;
+use FacebookHttpClientsFacebookCurlHttpClient;
+use FacebookHttpClientsFacebookHttpable;
 // init app with app id and secret
 FacebookSession::setDefaultApplication( '1837584569842574','4ae79f4816e66c3dfbc388a4376ee756' );
 // login helper with redirect_uri
@@ -39,11 +38,9 @@ if ( isset( $session ) ) {
   /* ---- Session Variables -----*/
       $_SESSION['FBID'] = $fbid;           
         $_SESSION['FULLNAME'] = $fbfullname;
-      $_SESSION['EMAIL'] =  $femail;
-      require 'functions.php'; // Include functions
-      checkuser($fuid,$ffname,$femail); // To update local DB
-    /* ---- header location after session ----*/
-      header("Location: index.php");
+      $_SESSION['email'] =  $email;
+  checkuser($fuid,$ffname,$email);
+  header("Location: index.php");
 } else {
   $loginUrl = $helper->getLoginUrl();
  header("Location: ".$loginUrl);
