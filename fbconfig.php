@@ -1,7 +1,6 @@
 <?php
 session_start();
-require 'functions.php'; // Include functions
-checkuser($fuid,$ffname,$femail); // To update local DB
+
 
 // added in v4.0.0
 require_once 'autoload.php';
@@ -19,7 +18,7 @@ use Facebook\HttpClients\FacebookHttpable;
 // init app with app id and secret
 FacebookSession::setDefaultApplication( '1837584569842574','4ae79f4816e66c3dfbc388a4376ee756' );
 // login helper with redirect_uri
-    $helper = new FacebookRedirectLoginHelper('http://thedailyeye.tv/start/fbconfig.php' );
+    $helper = new FacebookRedirectLoginHelper('http://thedailyeye.tv/start/config.php' );
 try {
   $session = $helper->getSessionFromRedirect();
 } catch( FacebookRequestException $ex ) {
@@ -41,8 +40,10 @@ if ( isset( $session ) ) {
       $_SESSION['FBID'] = $fbid;           
         $_SESSION['FULLNAME'] = $fbfullname;
       $_SESSION['EMAIL'] =  $femail;
+      require 'functions.php'; // Include functions
+      checkuser($fuid,$ffname,$femail); // To update local DB
     /* ---- header location after session ----*/
-  header("Location: index.php");
+      header("Location: index.php");
 } else {
   $loginUrl = $helper->getLoginUrl();
  header("Location: ".$loginUrl);
