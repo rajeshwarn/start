@@ -119,7 +119,7 @@ if ($gClient->getAccessToken()) {
 										<h3>Create Account</h3> 
 										<div class="social-sits">
 											<div class="facebook-button">
-												<a href="http://thedailyeye.tv/start/fbconfig.php">Connect with Facebook</a>
+												<a href="fbconfig.php">Connect with Facebook</a>
 											</div>
 											<div class="chrome-button">
 											 <?php $authUrl = $gClient->createAuthUrl();
@@ -151,7 +151,7 @@ if ($gClient->getAccessToken()) {
 										<h3>Create Account</h3> 
 										<div class="social-sits">
 											<div class="facebook-button">
-												<a href="http://thedailyeye.tv/start/fbconfig.php">Connect with Facebook</a>
+												<a href="fbconfig.php">Connect with Facebook</a>
 											</div>
 											<div class="chrome-button">
 											 <?php $authUrl = $gClient->createAuthUrl();
@@ -194,7 +194,7 @@ if ($gClient->getAccessToken()) {
 						<h3>Login</h3>
 						<div class="social-sits">
 							<div class="facebook-button">
-												<a href="http://thedailyeye.tv/start/fbconfig.php">Connect with Facebook</a>
+												<a href="fbconfig.php">Connect with Facebook</a>
 											</div>
 											<div class="chrome-button">
 											 <?php $authUrl = $gClient->createAuthUrl();
