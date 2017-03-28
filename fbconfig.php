@@ -1,5 +1,8 @@
 <?php
 session_start();
+require 'functions.php'; // Include functions
+checkuser($fuid,$ffname,$femail); // To update local DB
+
 // added in v4.0.0
 require_once 'autoload.php';
 use Facebook\FacebookSession;
@@ -14,10 +17,9 @@ use Facebook\Entities\AccessToken;
 use Facebook\HttpClients\FacebookCurlHttpClient;
 use Facebook\HttpClients\FacebookHttpable;
 // init app with app id and secret
-FacebookSession::setDefaultApplication( '1837584569842574
-','4ae79f4816e66c3dfbc388a4376ee756' );
+FacebookSession::setDefaultApplication( '1837584569842574','4ae79f4816e66c3dfbc388a4376ee756' );
 // login helper with redirect_uri
-    $helper = new FacebookRedirectLoginHelper('http://thedailyeye.tv/start/fbconfig.php');
+    $helper = new FacebookRedirectLoginHelper('http://thedailyeye.tv/start/fbconfig.php' );
 try {
   $session = $helper->getSessionFromRedirect();
 } catch( FacebookRequestException $ex ) {
@@ -32,13 +34,13 @@ if ( isset( $session ) ) {
   $response = $request->execute();
   // get response
   $graphObject = $response->getGraphObject();
-     	$fbid = $graphObject->getProperty('id');              // To Get Facebook ID
- 	    $fbfullname = $graphObject->getProperty('name'); // To Get Facebook full name
-	    $femail = $graphObject->getProperty('email');    // To Get Facebook email ID
-	/* ---- Session Variables -----*/
-	    $_SESSION['FBID'] = $fbid;           
-        $_SESSION['email'] = $fbfullname;
-	    $_SESSION['EMAIL'] =  $femail;
+      $fbid = $graphObject->getProperty('id');              // To Get Facebook ID
+      $fbfullname = $graphObject->getProperty('name'); // To Get Facebook full name
+      $femail = $graphObject->getProperty('email');    // To Get Facebook email ID
+  /* ---- Session Variables -----*/
+      $_SESSION['FBID'] = $fbid;           
+        $_SESSION['FULLNAME'] = $fbfullname;
+      $_SESSION['EMAIL'] =  $femail;
     /* ---- header location after session ----*/
   header("Location: index.php");
 } else {
