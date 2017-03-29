@@ -76,7 +76,8 @@
           
                      <div class="col-sm-3 col-md-4">
         <div class="input-group">
-            <input type="text" name="search" placeholder="Search..">
+            <input type="text" class="form-control" placeholder="Search" name="q">
+            
         </div>
         </div>
  <ul class="nav navbar-nav navbar-right">

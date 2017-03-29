@@ -202,7 +202,10 @@ if(isset($email)){
     echo '
     <center> 
     <div href="#watch" class="player play-icon popup-with-zoom-anim">
-       
+    
+    <h2>PLEASE SIGN IN TO WATCH THE VIDEOS</h2>
+    <a href="http://thedailyeye.tv/start/signin/">SIGNIN</a>
+    
     <video id="my-video" class="video-js img-responsive vjs-fluid" controls preload="auto" width="640" height="264"
   poster="' ;
            echo $data['thumbnail']; 
